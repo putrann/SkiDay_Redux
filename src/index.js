@@ -1,12 +1,29 @@
 import C from './constants';
-import { allSkiDays, goal } from './initialState.json';
+import goal, { error } from './store/reducers';
+
+const initialState = null;
+
+//   type: C.ADD_DAY,
+//   payload: {
+//     resort: 'puchan',
+//     date: '2020-2-7',
+//     powder: true,
+//     backcountry: false,
+//   },
+
+const initialState2 = ['error ', 'not connect', 'server is die'];
+const action = {
+  type: C.ADD_ERROR,
+  payload: 'server is die hihi',
+};
+
+// const nextState = goal(initialState, action);
+const nextState2 = error(initialState2, action);
 
 console.log(`
-    Ski day counter
-    ======
-    The goal is ${goal} day
-    Innitale there are ${allSkiDays.length} ski day
-    ==== Constants action ===
-    ${Object.keys(C).join('\n   ')}
+ initial goal: ${initialState2}
+ action: ${JSON.stringify(action)}
+ newgoal: ${JSON.stringify(nextState2)}
 `);
+// ${Object.keys(C).join('\n   ')}
 //Object.key(C): return a array
