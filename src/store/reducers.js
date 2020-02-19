@@ -22,3 +22,14 @@ export const error = (preState = [], action) => {
       preState;
   }
 };
+
+export const addAllSkiDay = (preState = [], action) => {
+  switch (action.type) {
+    case C.ADD_DAY:
+      return [...preState, action.payload];
+    case C.REMOVE_DAY:
+      return preState.filter(skiDay => skiDay.date !== action.payload);
+    default:
+      return preState;
+  }
+};
