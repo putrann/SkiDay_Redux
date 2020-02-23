@@ -20,3 +20,13 @@ export const setGoal = goal => {
     payload: goal,
   };
 };
+
+export const addError = error => ({
+  type: C.ADD_ERROR,
+  payload: error,
+});
+
+export const removeError = index => ({
+  type: C.CLEAR_ERROR,
+  payload: index,
+});
